@@ -16,52 +16,55 @@ int main(void)
   // SET RIGHT LOCALIZATION BEGIN //
   setlocale(LC_ALL, "Ru-RU");
   // SET RIGHT LOCALIZATION END //
-
 /*
-  *****************************************************************************************
-  *                              DATA TYPES and VARIABLES                                 *
-  *****************************************************************************************
-  *  FLOATING POINT NUMBERS                                                               *
-  *  Float (4 bytes)          - single precision real types                               *
-  *                           [6 sings precision]                                         *
-  *                           (EXP: up 0.00001 to 9999.9)                                 *
-  *                           (%f - Output form)                                          *
-  *  Double (8 bytes)         - double precision real types                               *
-  *                           [10 sings precision]                                        *
-  *                           (EXP: up 0.00000001 to 99999999.9)                          *
-  *                           (%lf - Output form)                                         *
-  * ------------------------------------------------------------------------------------- *
-  *  INTEGER NUMBERS                                                                      *
-  *  Int (4 bytes)            - describes integer numbers                                 *
-  *                           [up -2147483648 to 2147483647]                              *
-  *                           (%d - Output form)                                          *
-  *  Unsigned Int (4 bytes)   - integer numbers without sign                              *
-  *                           [up 0 to 4294967295]                                        *
-  *                           (%u - Output form)                                          *
-  *  Short (2 bytes)          - describes short integer numbers                           *
-  *                           [up -32768 to 32767]                                        *
-  *                           (%hd - Output form)                                         *
-  *  Unsigned Short (2 bytes) - describes short integer numbers without sign              *
-  *                           [up 0 to 65535]                                             *
-  *                           (%hu - Output form)                                         *
-  *  Long (4 bytes)           -  describes long integer numbers                           *
-  *                           [up -2147483648 to 2147483647]                              *
-  *                           (%ld - Output form)                                         *
-  *  Unsigned Long (4 bytes)  - describes long integer numbers without sign               *
-  *                           [up 0 to 4294967295]                                        *
-  *                           (%lu - Output form)                                         *
-  * ------------------------------------------------------------------------------------- *
-  *  CHARACTER TYPE                                                                       *
-  *  Char (1 byte)            -  describes characters                                     *
-  *                           [up -128 to 127]                                            *
-  *                           (%c - Output form)                                          *
-  *  Unsigned Char (1 byte)   - describes characters                                      *
-  *                           [up 0 to 255]                                               *
-  *                           (%c - Output form)                                          *
-  *                                                                                       *
-  * ------------------------------------------------------------------------------------- *
-  *  ATTENTION! The C doesn't have a BOOLean type!                                        *
-  *                                                                                       *
+  *****************************************************************************************************
+  *                                         DATA TYPES                                                *
+  *****************************************************************************************************
+  
+  *****************************************************************************************************
+  * - FLOATING POINT NUMBERS -                                                                        *
+  *****************************************************************************************************
+  * float              (4 Bytes) Min: [up 0.00001]                - single precision real types       *
+  *                              Max: [to 9999.9]                   [%f - Output form]                *
+  *---------------------------------------------------------------------------------------------------*
+  * double             (8 Bytes) Min: [up 0.00000001]             - double precision real types       *
+  *                              Max: [to 99999999.9]               [%lf - Output form]               *
+  *****************************************************************************************************
+  
+  *****************************************************************************************************
+  * - INTEGER NUMBERS -                                                                               *
+  *****************************************************************************************************
+  * short              (2 Bytes) Min: [up -32768]                 - short integer numbers             *
+  *                              Max: [to  32767]                   [%hd - Output form]               *
+  *---------------------------------------------------------------------------------------------------*
+  * unsigned short     (2 Bytes) Min: [up 0]                      - positive short integer numbers    *
+  *                              Max: [to 65535]                    [%hu - Output form]               *
+  *---------------------------------------------------------------------------------------------------*
+  * int                (4 Bytes) Min: [up -2147483648]            - integer numbers                   *
+  * (long)                       Max: [to  2147483647]              [%d (%ld) - Output form]          *
+  *---------------------------------------------------------------------------------------------------*
+  * unsigned int       (4 Bytes) Min: [up 0]                      - positive integer numbers          *
+  * (unsigned long)              Max: [to 4294967295]               [%u (%lu)- Output form]           *
+  *---------------------------------------------------------------------------------------------------*
+  * long long int      (8 Bytes) Min: [up -9223372036854775808]   - long integer numbers              *
+  *                              Max: [to  9223372036854775807]                                       *
+  *****************************************************************************************************
+  
+  *****************************************************************************************************
+  * - CHARACTER TYPES -                                                                               *
+  *****************************************************************************************************
+  * char               (1 Bytes) Min: [up -128]                   - characters                        *
+  *                              Max: [to  127]                     (%c - Output form)                *
+  *---------------------------------------------------------------------------------------------------*
+  * unsigned char      (1 Bytes) Min: [up 0]                      - characters                        *
+  *                              Max: [to 255]                      (%c - Output form)                *
+  *****************************************************************************************************
+  
+  *****************************************************************************************************
+  * - BOOLEAN TYPES -      ATTENTION! The C doesn't have a BOOLean type!                              *
+  *****************************************************************************************************
+*/
+/*
   *****************************************************************************************
   *                                    OUTPUT FORMATS                                     *
   *****************************************************************************************
@@ -96,19 +99,19 @@ int main(void)
   * FOR DEFINE OF VARIABLES WE MUST POINT A TYPE AND NAME OUT                             *
   *                                                                                       *
   *  int a; - define type variable A like INTEGER                                         *
-  *         value range of -2147483648 up to 2147483647                                   *
+  *           value range of -2147483648 up to 2147483647                                 *
   *                                                                                       *
   *  a = 18; - initialize variable A by assigning her a value (Exp.: 18)                  *
-  *          sign equal [=] - means assign                                                *
+  *            sign equal [=] - means assign                                              *
   *                                                                                       *
   * DEFINE AND INITIALIZE VARIABE WE CAN USE ONE EXPRESSION                               *
   *                                                                                       *
   *  short b = 6; - define and assign variable B                                          *
-  *               short - define type variable B like SHORT                               *
-  *               value range of -32768 up to 32767                                       *
-  *               B - define variable name like B                                         *
-  *               = - assigning (initialize variable)                                     *
-  *               6 - assign a value  for variable B equal 6                              *
+  *                 short - define type variable B like SHORT                             *
+  *                 value range of -32768 up to 32767                                     *
+  *                 B - define variable name like B                                       *
+  *                 = - assigning (initialize variable)                                   *
+  *                 6 - assign a value  for variable B equal 6                            *
   *                                                                                       *
   * WHILE DEFINING AND INITIALIZE VARIABE WE CAN DO ARYTHMETIC OPERATIONS                 *
   *                                                                                       *
